@@ -11,11 +11,24 @@
             padding: 10px;
         }
     </style>
+    <script>
+        function changeColor() {
+            var colorName = document.getElementById("txt_color_name").value;
+            if(colorName.trim() == "") {
+                alert("Please enter a color");
+                return;
+            }
+            document.getElementById("lbl_name").style.color = document.getElementById("txt_color_name").value;
+        }
+    </script>
 </head>
 <body>
 <div class="center">
     <p>Hello World!</p>
-    <p>Hello Nam</p>
+    <p id="lbl_name" style="color:red;">Hello Nam</p>
+    <span>Input Color Name</span>
+    <input id="txt_color_name" style="margin-right: 10px;" type="text" style="width:100px"/>
+    <input type="button" value="Change Color" onclick="changeColor();"/>
 </div>
 </body>
 </html>
