@@ -2,35 +2,176 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bai 1</title>
+        <title>Form Login</title>
         <style>
-            .box{
-                width: 680px;
-                height: 670px;
-                color: #ad0e0e;
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins',sans-serif;
+            }
+            body{
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                background: linear-gradient(135deg,#71b7e6,#9b59b6);
+            }
+            .container{
+                max-width:700px;
+                width: 100%;
+                background: #fff;
+                padding: 25px 30px;
+                border-radius: 5px;
+            }
+            .container .title{
+                font-size: 25px;
+                font-weight: 500;
+                position: relative;
+            }
+            .container .title:before{
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 30px;
+                left: 0;
+                bottom: 0;
+                background: #9b59b6;
+            }
+            .container form .user-details{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 20px 0 12px 0;
+            }
+            .container form .user-details .input-box{
+                width: calc(100% /2 - 20px);
+                margin-bottom:15px ;
+            }
+            .container form .user-details .input-box input{
+                height: 40px;
+                width: 100%;
+                outline: none;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                padding-left: 15px;
+                font-size: 16px;
+                border-bottom-width: 2px;
+                transition: all 0.3s ease;
+            }
+            .container form .user-details .input-box .details{
+                display: block;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .container form .user-details .input-box input:focus,
+            .container form .user-details .input-box input:valid{
+                border-color: grey;
+            }
+
+
+            .container form .user-details .gender-details .details{
+                display: flex;
+                width: 80%;
+                margin: 14px 0;
+                justify-content: space-between;
+            }
+
+            .container form .user-details .gender-details .details label{
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                background-color: white;
-                border-radius: 7.5px;
-                padding: 10px;
-                margin: auto;
-                margin-top: 150px;
             }
-            .header{
-                width: 100%;
-                height: 100vh;
-                background-image: linear-gradient(0,rgba(215,118,231,0.5),rgba(215,198,226,0.5));
-                background-size: 100%;
-                padding-top: 15px;
-                padding-bottom: 20px;
-                margin: 0px;
+
+            .container form .user-details .gender-details .details .dot{
+                height: 18px;
+                width: 18px;
+                background: #d9d9d9;
+                border-radius: 50%;
+                margin-right: 10px;
+                border: 5px solid transparent;
+                transition: all 0.3s ease;
             }
+            #dot-1:checked ~.details label .one,
+            #dot-2:checked ~.details label .two{
+                border-color:#d9d9d9;
+                background: #9b59b6;
+            }
+            form input[type="radio"]{
+                display: none;
+            }
+
+            .button{
+                height: 45px;
+                margin:45px 0;
+                ;
+            }
+            .button input{
+                height: 100%;
+                width: 30%;
+                background-color: #23569e;
+                border: 5px solid transparent;
+                border-radius: 5px;
+            }
+
+
+
         </style>
     </head>
     <body>
-    <div class="header">
-        <div class="box">Box1</div>
-    </div>
+       <div class="container">
+           <div class="title">Registration</div>
+           <form action="#">
+               <div class="user-details">
+                   <div class="input-box">
+                       <span class="details">Full Name</span>
+                       <input type="text" placeholder="Enter your name">
+                   </div>
+                   <div class="input-box">
+                       <span class="details">User Name</span>
+                       <input type="text" placeholder="Enter your username">
+                   </div>
+                   <div class="input-box">
+                       <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email">
+                   </div>
+                   <div class="input-box">
+                       <span class="details">Phone Number</span>
+                       <input type="text" placeholder="Enter your phone number">
+                   </div>
+                   <div class="input-box">
+                       <span class="details">Password</span>
+                       <input type="text" placeholder="Enter your password">
+                   </div>
+                   <div class="input-box">
+                       <span class="details">Confirm Password</span>
+                       <input type="text" placeholder="Enter your confirm password">
+                   </div>
+                   <div class="gender-details">
+                       <input type="radio" name="gender" id="dot-1">
+                       <input type="radio" name="gender" id="dot-2">
+                       <span class="input-box">Gender</span>
+                       <div class="details">
+                           <label for="dot-1">
+                               <span class="dot one"></span>
+                               <span class="gender">Male</span>
+                           </label>
+                           <label for="dot-2">
+                               <span class="dot two"></span>
+                               <span class="gender">Female</span>
+                           </label>
+                       </div>
+                   </div>
+                   <div class="input-box">
+                       <span class="birthday">Birthday</span>
+                       <input type="date" id="birthday" name="birthday">
+                   </div>
+               </div>
+
+               <div class="button">
+                   <input type="submit" value="Submit" style="color: white">
+               </div>
+           </form>
+       </div>
     </body>
 </html>
