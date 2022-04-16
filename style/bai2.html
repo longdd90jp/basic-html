@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+
+        <style>
+            form{
+                background: #ccc;
+                margin: 0 auto;
+                width: 300px;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            table{
+                width: 100%;
+               
+            }
+            input{
+                width: 60px;
+                height: 60px;
+            } 
+            .operator{
+                background-color: rgb(173, 173, 24);
+                border: none;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <form >
+        <table>
+            
+                <input type="text" style="width: 250px;  margin-left: 5px ; " disabled>
+        
+            <tr>
+                <td><input type="button"  value="1"></td>
+                <td><input type="button" value="2"></td>
+                <td><input type="button" value="3"></td>
+                <td><input type="button" class="operator" value="+"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4"></td>
+                <td><input type="button" value="5"></td>
+                <td><input type="button" value="6"></td>
+                <td><input type="button" class="operator" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7"></td>
+                <td><input type="button" value="8"></td>
+                <td><input type="button" value="9"></td>
+                <td><input type="button" class="operator" value="x"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="operator" value="c"></td>
+                <td><input type="button" class="operator" value="0"></td>
+                <td><input type="button" class="operator" value="="></td>
+                <td><input type="button" class="operator" value="/"></td>
+            </tr>
+            
+          </table>
+        </form>
+    </body>
+</html>

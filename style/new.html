@@ -1,0 +1,124 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            height: 100vh;
+            padding: 0;
+            background-color: #ffe0f8;
+        }
+        .container {
+            background-color: #e1f4f4;
+        }
+        .center-block {
+            margin: auto;
+            width: 700px;
+            border: 1px solid #73AD21;
+            padding: 10px;
+            margin-top: 200px;
+        }
+        .center-text {
+            text-align: center;
+        }
+        .clear-both {
+            clear: both;
+        }
+        .item-left {
+            width: 104px;
+            display: inline-block;
+            float: left;
+            margin-top: 5px;
+            margin-left: 90px;
+        }
+        .item-right {
+            width: 300px;
+            display: inline-block;
+        }
+        .block-data {
+            margin-bottom: 30px;
+        }
+        .button-style {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .textbox-style {
+            border-radius: 5px;
+            border: 1px solid #848484;
+            outline:0;
+            height:25px;
+            width: 275px;
+        }
+        .error-text {
+            color: red;
+        }
+        .button-style:hover {
+            background-color: #0C7013FF;
+        }
+    </style>
+    <script>
+        function validateInput() {
+            var isError = false;
+            // validate user name
+            var user_name = document.getElementById("txt_user_name").value;
+            if(user_name.trim() == "") {
+                document.getElementById("lbl_error_user_name").style.display = "inline-block";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_user_name").style.display = "none";
+            }
+
+            // validate password
+            var password = document.getElementById("txt_password").value;
+            if(password.trim() == "") {
+                isError = true;
+                document.getElementById("lbl_error_password").style.display = "inline-block";
+            } else {
+                document.getElementById("lbl_error_password").style.display = "none";
+            }
+            // if ok then alert
+            if(!isError) {
+                alert("Input OK");
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="center-block container">
+    <div class="center-text">
+        <h2>Login Form</h2>
+    </div>
+    <div class="clear-both block-data">
+        <div class="item-left">
+            <label>User Name</label>
+        </div>
+        <div class="item-right">
+            <input type="text" id="txt_user_name" class="textbox-style"/>
+            <label id="lbl_error_user_name" class="error-text" style="display: none;">This field is required</label>
+        </div>
+    </div>
+    <div class="clear-both block-data">
+        <div class="item-left">
+            <label>Password</label>
+        </div>
+        <div class="item-right">
+            <input type="password" id="txt_password" class="textbox-style"/>
+            <label id="lbl_error_password" class="error-text" style="display: none;">This field is required</label>
+        </div>
+    </div>
+    <div class="center-text block-data">
+        <button class="button-style" onclick="validateInput();">Login</button>
+    </div>
+</div>
+</body>
+</html>
