@@ -62,6 +62,9 @@
         .error-text {
             color: red;
         }
+        .error-input {
+            border-color: red;
+        }
         .button-style:hover {
             background-color: #0C7013FF;
         }
@@ -70,12 +73,17 @@
         function validateInput() {
             var isError = false;
             // validate user name
-            var user_name = document.getElementById("txt_user_name").value;
+            var tag_user_name = document.getElementById("txt_user_name");
+            var tag_lbl_error_user_name = document.getElementById("lbl_error_user_name");
+            var user_name = tag_user_name.value;
+
             if(user_name.trim() == "") {
-                document.getElementById("lbl_error_user_name").style.display = "inline-block";
+                tag_lbl_error_user_name.style.display = "inline-block";
+                tag_user_name.classList.add("error-input");
                 isError = true;
             } else {
-                document.getElementById("lbl_error_user_name").style.display = "none";
+                tag_user_name.classList.remove("error-input");
+                tag_lbl_error_user_name.style.display = "none";
             }
 
             // validate password
