@@ -30,5 +30,16 @@
     <input id="txt_color_name" style="margin-right: 10px;" type="text" style="width:100px"/>
     <input type="button" value="Change Color" onclick="changeColor();"/>
 </div>
+
+<script>
+    function showImage(imgTag) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+
+        expandImg.src = imgTag.src;
+        imgText.innerHTML = imgTag.getAttribute("data_name");
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
 </body>
 </html>
