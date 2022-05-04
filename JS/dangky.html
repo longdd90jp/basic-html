@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <title>dang ky</title>
+
+        <style>
+            h2{
+                text-align: center;
+                color: rgb(22, 138, 22);
+                font-style: italic;
+                font-size: 19px;
+            }
+            .block{
+                margin: auto;
+                width: 250px;
+                background-color: rgb(216, 228, 225);
+                padding: 10px;
+            }
+            .label{
+                font-size: 15px;
+                color: rgb(0, 0, 0);
+                text-transform: capitalize;
+                display: block;
+                margin-bottom: 5px;
+            }
+            #lbl_1{
+                font-size: 12px;
+                color: rgb(0, 0, 0);
+               
+            }
+            .text{
+                width: 95%;
+                height: 20px ;
+                border-radius: 5px;
+                border: none;
+            }
+            p{
+                margin-top: 3px;
+            }
+            .row{
+                display: flex;
+            }
+            .button-1{
+                background-color: rgb(39, 0, 180);
+                border: none;
+                padding: 5px 10px;
+                border-radius: 2px; 
+                color: white;
+            }
+            .button-2{
+                margin-left: 120px ;
+                background-color: rgb(174, 197, 43);
+                border: none;
+                padding: 5px 10px;
+                border-radius: 2px;
+            }
+            .error-text {
+                color: red;
+                font-size: 12px;
+            }
+
+        </style>
+        <script>
+            function validateInput() {
+            var isError = false;
+            // validate full name
+            var full_name = document.getElementById("txt_full_name").value;
+            if(full_name.trim() == "") {
+                document.getElementById("lbl_error_full_name").style.display = "inline-block";
+                document.getElementById("txt_full_name").style.border="1px solid red";
+               
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_full_name").style.display = "none";
+                document.getElementById('txt_full_name').style.border ="";
+            }
+            // validate user name
+            var user_name = document.getElementById("txt_username").value;
+            if(user_name.trim() == "") {
+                document.getElementById("lbl_error_username").style.display = "inline-block";
+                document.getElementById("txt_username").style.border="1px solid red";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_username").style.display = "none";
+                document.getElementById('txt_username').style.border ="";
+            }
+            // validate email
+            var email = document.getElementById("txt_email").value;
+            if(email.trim() == "") {
+                document.getElementById("lbl_error_email").style.display = "inline-block";
+                document.getElementById("txt_email").style.border="1px solid red";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_email").style.display = "none";
+                document.getElementById('txt_email').style.border ="";
+            }
+
+            // validate password
+            var password = document.getElementById("txt_password").value;
+            if(password.length < 6 ) {
+                document.getElementById("lbl_error_password").style.display = "inline-block";
+                document.getElementById("txt_password").style.border="1px solid red";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_password").style.display = "none";
+                document.getElementById('txt_password').style.border ="";
+            }
+
+            // validate cfpassword
+            var cfpassword = document.getElementById("txt_confirm_password").value;
+            if(cfpassword.trim() == "" ) {
+                document.getElementById("lbl_error_confirm_password").style.display = "inline-block";
+                document.getElementById("txt_confirm_password").style.border="1px solid red";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_confirm_password").style.display = "none";
+                document.getElementById('txt_confirm_password').style.border ="";
+            }
+
+            if(cfpassword.trim() != password.trim())
+            {
+                document.getElementById("lbl_error_confirm_password2").style.display = "inline-block";
+                document.getElementById("txt_confirm_password").style.border="1px solid red";
+                isError = true;
+            } else {
+                document.getElementById("lbl_error_confirm_password2").style.display = "none";
+                document.getElementById('txt_confirm_password').style.border ="";
+            }
+
+            // accept Terms
+
+            var checkbox = document.getElementById("cb");
+            if(checkbox.checked == true)
+            {
+                document.getElementById("lbl_error_cb").style.display = "none";
+                document.getElementById("lbl_1").style.color="black";
+            } else {
+                document.getElementById("lbl_error_cb").style.display = "inline-block";
+                document.getElementById("lbl_1").style.color="red";
+                isError = true;
+            }
+            // if ok then alert
+            if(!isError) {
+                alert("Input OK");
+            }
+        }
+
+        function reset(){
+            //reset fullname
+            document.getElementById("lbl_error_full_name").style.display = "none";
+            document.getElementById('txt_full_name').style.border ="";
+            document.getElementById('txt_full_name').value="";
+
+            //reset username
+            document.getElementById("lbl_error_username").style.display = "none";
+            document.getElementById('txt_username').style.border ="";
+            document.getElementById('txt_username').value="";
+
+            //reset email
+            document.getElementById("lbl_error_email").style.display = "none";
+            document.getElementById('txt_email').style.border ="";
+            document.getElementById('txt_email').value="";
+            
+            //reset password
+            document.getElementById("lbl_error_password").style.display = "none";
+            document.getElementById('txt_password').style.border ="";
+            document.getElementById('txt_password').value="";
+
+            //reset cfpassword
+            document.getElementById("lbl_error_confirm_password").style.display = "none";
+            document.getElementById("lbl_error_confirm_password2").style.display = "none";
+            document.getElementById('txt_confirm_password').style.border ="";
+            document.getElementById('txt_confirm_password').value="";
+            
+
+            //reset checkbox
+            document.getElementById("lbl_error_cb").style.display = "none";
+            document.getElementById("lbl_1").style.color="black";
+            document.getElementById("cb").checked=false;
+        }
+        </script>
+    </head>
+    <body>
+        <div class="block">
+            <div class="center-text"> 
+                <h2>BezKoder.com</h2>
+            </div>
+            <div >
+            <div >
+                <label class="label" >full name</label> <p>
+                <input type="text" class="text" id="txt_full_name">
+                <label id="lbl_error_full_name" class="error-text" style="display: none;">Fullname is required</label>
+            </div>
+            <div>
+                <label class="label">username</label> <p>
+                <input type="text" class="text" id="txt_username">
+                <label id="lbl_error_username" class="error-text" style="display: none;">Username is required</label>
+            </div>
+            <div>
+                <label class="label">email</label> <p>
+                <input type="text" class="text" id="txt_email">
+                <label id="lbl_error_email" class="error-text" style="display: none;">Email is required</label>
+            </div>
+            <div>
+                <label class="label">password</label> <p>
+                <input type="password" class="text" id="txt_password">
+                <label id="lbl_error_password" class="error-text" style="display: none;">Password must be at least 6 characters</label>
+            </div>
+            <div>
+                <label class="label">confirm password</label> <p>
+                <input type="password" class="text" id="txt_confirm_password">
+                <label id="lbl_error_confirm_password" class="error-text" style="display: none;">This field is required</label>
+                <label id="lbl_error_confirm_password2" class="error-text" style="display: none;">password error</label>
+            </div>
+            <div>
+                <input type="checkbox" class="checkbox" id="cb"> <label id="lbl_1" >I have read and agree to the Terms</label> <p>
+                <label id="lbl_error_cb" class="error-text" style="display: none;">Accept Terms is required</label>
+            </div>
+            <div class="row">
+            <div>  <button class="button-1" onclick="validateInput();" >Register</button> </div>
+            <div> <button class="button-2" onclick="reset();">  Reset </button></div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
