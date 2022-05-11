@@ -13,11 +13,35 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            $("p").click(function(){
-                $(this).hide();
-            });
-        });
+        function validateInput() {
+            var isError = false;
+            // validate user name
+            var tag_user_name = document.getElementById("txt_user_name");
+            var tag_lbl_error_user_name = document.getElementById("lbl_error_user_name");
+            var user_name = tag_user_name.value;
+
+            if(user_name.trim() == "") {
+                tag_lbl_error_user_name.style.display = "inline-block";
+                tag_user_name.classList.add("error-input");
+                isError = true;
+            } else {
+                tag_user_name.classList.remove("error-input");
+                tag_lbl_error_user_name.style.display = "none";
+            }
+
+            // validate password
+            var password = document.getElementById("txt_password").value;
+            if(password.trim() == "") {
+                isError = true;
+                document.getElementById("lbl_error_password").style.display = "inline-block";
+            } else {
+                document.getElementById("lbl_error_password").style.display = "none";
+            }
+            // if ok then alert
+            if(!isError) {
+                alert("Input OK");
+            }
+        }
     </script>
 </head>
 <body>
